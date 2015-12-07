@@ -49,8 +49,10 @@ private:
     void displayAddComputerMenu();
     void displayAllScientists();
     void displayAllComputers();
+
     void displayScientistSearchMenu();
     void displayScientistSortMenu();
+    void displayComputerSortMenu();
     void displayUnknownCommandMenu();
     void displayScientists(std::vector<Scientist> scientists);
     void displayComputers(std::vector<Computers> computers);
