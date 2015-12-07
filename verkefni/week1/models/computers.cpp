@@ -41,10 +41,8 @@ string Computers::didItGetBuilt() const
 }
 
 //<<<<<<< Updated upstream
-/*bool Computers::contains(string searchTerm)
-=======
+
 bool Computers::contains(string searchTerm)
->>>>>>> Stashed changes
 {
     string searchTermLower = utils::stringToLower(searchTerm);
 
@@ -54,12 +52,12 @@ bool Computers::contains(string searchTerm)
         return true;
     }
 
-    if (searchTermLower == "electronic" && type == string::electronic)
+    if (searchTermLower == "electronic" && type == comType::electronic)
     {
         return true;
     }
 
-    if (searchTermLower == "mecanic" && type == string::mecanic)
+    if (searchTermLower == "mechanic" && type == comType::mechanic)
     {
         return true;
     }
@@ -71,18 +69,9 @@ bool Computers::contains(string searchTerm)
         return true;
     }
 
-    if (yearDied != constants::YEAR_DIED_DEFAULT_VALUE)
-    {
-        string yearDiedString = utils::intToString(yearDied);
-
-        if (yearDiedString.find(searchTerm) != string::npos)
-        {
-            return true;
-        }
-    }
     else
     {
-        if (searchTermLower == "alive")
+        if (searchTermLower == "Built")
         {
             return true;
         }
@@ -90,5 +79,3 @@ bool Computers::contains(string searchTerm)
 
     return false;
 }
-
-*/

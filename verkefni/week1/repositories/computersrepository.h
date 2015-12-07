@@ -26,7 +26,7 @@ public:
      * @param searchTerm Contains the input that the user wishes to filter on
      * @return a vector of scientists filtered by searchTerm
      */
-  //  vector<Computers> searchForComputers(string searchTerm);
+    vector<Computers> searchForComputers(string searchTerm);
 
     /**
      * @brief addComputers saves a scientist model to a file

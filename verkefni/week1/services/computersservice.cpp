@@ -19,10 +19,10 @@ vector<Computers> ComputersService::getAllComputers(string orderBy, bool orderAs
     return computers;
 }
 
-/*vector<Computers> ComputersService::searchForComputers(string searchTerm)
+vector<Computers> ComputersService::searchForComputers(string searchTerm)
 {
     return computersRepo.searchForComputers(searchTerm);
-}*/
+}
 
 bool ComputersService::addComputers(Computers computers)
 {

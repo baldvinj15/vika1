@@ -12,13 +12,15 @@ enum command {
     add,
     add2,
     display,
+    display2,
     search,
+    search2,
     sort,
     sort2,
     back,
     quit,
     unknown,
-    display2
+
 
 };
 
@@ -49,8 +51,8 @@ private:
     void displayAddComputerMenu();
     void displayAllScientists();
     void displayAllComputers();
-
     void displayScientistSearchMenu();
+    void displayComputerSearchMenu();
     void displayScientistSortMenu();
     void displayComputerSortMenu();
     void displayUnknownCommandMenu();
@@ -62,19 +64,21 @@ private:
      * @param userInput the input the user is trying to create a scientist from
      */
     void addCommandHandler(std::string userInput);
-    void add2CommandHandler(std::string userInput);
+    void addCommandHandler2(std::string userInput);
 
     /**
      * @brief sortCommandHandler calls the setSort function and notifies the user how it went
      * @param userInput the input the user is trying to change sort from
      */
     void sortCommandHandler(std::string userInput);
+    void sortCommandHandler2(std::string userInput);
 
     /**
      * @brief searchCommandHandler calls the scientistService displays a list of filtered users
      * @param userInput a string sent as input to the search function
      */
     void searchCommandHandler(std::string userInput);
+    void searchCommandHandler2(std::string userInput);
 
     /**
      * @brief addScientist attempts to add a scientist
@@ -82,7 +86,7 @@ private:
      * @return true if it was a success, false if it was a failure
      */
     bool addScientist(std::string data);
-    bool addComputers(std::string data);
+    bool addComputer(std::string data);
 
     /**
      * @brief setSort attempts to change how scientists will be sorted based on userinput
@@ -90,7 +94,7 @@ private:
      * @return true if it was a success, false if it was a failure
      */
     bool setSort(std::string sortCommand);
-    bool setSort2(std::string sort2Command);
+    bool setSort2(std::string sortCommand);
 
     void displayError(std::string error);
 

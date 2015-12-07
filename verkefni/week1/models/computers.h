@@ -6,7 +6,7 @@
 using namespace std;
 
 enum comType{ //lagaði þetta
-    mecanic,
+    mechanic,
     electronic
 };
 
@@ -21,8 +21,7 @@ public:
     enum comType getType() const;
     int getYearBuild() const;
     string didItGetBuilt() const;
-
-   // bool contains(string searchTerm);
+    bool contains(string searchTerm);
 
 private:
     string name;

@@ -22,6 +22,12 @@ namespace constants {
     const string SORT_SCIENTIST_YEAR_BORN_DESCENDING = "born-desc";
     const string SORT_SCIENTIST_YEAR_DIED_ASCENDING = "died-asc";
     const string SORT_SCIENTIST_YEAR_DIED_DESCENDING = "died-desc";
+    const string SORT_COMPUTER_NAME_ASCENDING = "name-asc";
+    const string SORT_COMPUTER_NAME_DESCENDING = "name-desc";
+    const string SORT_COMPUTER_YEAR_BUILT_ASCENDING = "built-asc";
+    const string SORT_COMPUTER_YEAR_BUILT_DESCENDING = "built-desc";
+    const string SORT_COMPUTER_TYPE_ASCENDING = "type-asc";
+    const string SORT_COMPUTER_TYPE_DESCENDING = "type-desc";
 }
 
 #endif // CONSTANTS_H

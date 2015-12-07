@@ -55,7 +55,7 @@ std::vector<Computers> ComputersRepository::getAllComputers()
     return computers;
 }
 
-/*vector<Computers> ComputersRepository::searchForComputers(string searchTerm)
+vector<Computers> ComputersRepository::searchForComputers(string searchTerm)
 {
     vector<Computers> allComputers = getAllComputers();
     vector<Computers> filteredComputers;
@@ -70,7 +70,7 @@ std::vector<Computers> ComputersRepository::getAllComputers()
 
     return filteredComputers;
 }
-*/
+
 bool ComputersRepository::addComputers(Computers computers)
 {
     ofstream file;

@@ -13,7 +13,7 @@ using namespace std;
  * This file contains reusable utility functions used throughout the application
  */
 
-namespace utils {    
+namespace utils {
     vector<string> splitString(string line, char delimeter);
 
     int stringToInt(string str);
