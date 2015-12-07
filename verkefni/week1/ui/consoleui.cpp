@@ -41,6 +41,10 @@ void ConsoleUI::display()
         case command::display:
             displayAllScientists();
             break;
+        /*
+        case command::display2:
+            displayAllComputers();
+        break;*/
         case command::search:
             displayScientistSearchMenu();
             break;
@@ -69,6 +73,10 @@ void ConsoleUI::readInput()
     bool shouldTreatInputAsCommand = (lastCommand != command::search);
 
     if (userInput == "display" && shouldTreatInputAsCommand)
+    {
+        lastCommand = command::sort;
+    }
+    else if (userInput == "display2" && shouldTreatInputAsCommand)
     {
         lastCommand = command::sort;
     }
@@ -165,7 +173,13 @@ void ConsoleUI::displayMenu()
          << "add:" << "Adds a scientist\n";
 
     cout << setw(constants::MENU_COMMAND_WIDTH) << std::left
+         << "add2:" << "Adds a computer\n\n";
+
+    cout << setw(constants::MENU_COMMAND_WIDTH) << std::left
          << "display:" << "Displays scientists\n";
+
+    cout << setw(constants::MENU_COMMAND_WIDTH) << std::left
+         << "display2:" << "Displays computers\n";
 
     cout << setw(constants::MENU_COMMAND_WIDTH) << std::left
          << "search:" << "Search for a scientist\n";
@@ -173,8 +187,6 @@ void ConsoleUI::displayMenu()
     cout << setw(constants::MENU_COMMAND_WIDTH) << std::left
          << "quit:" << "Quits the program\n\n";
 
-    cout << setw(constants::MENU_COMMAND_WIDTH) << std::left
-         << "add2:" << "Adds a computer\n\n";
 
     cout << "Command: ";
 }
@@ -280,7 +292,7 @@ void ConsoleUI::displayScientists(std::vector<Scientist> scientists)
              << setw(12) << std::left << scientists.at(i).getYearBorn()
              << setw(12) << std::left << died << endl;
     }
-}/*
+}
 void displayComputers(std::vector<Computers> computers){
     if (computers.size() == 0)
     {
@@ -297,18 +309,14 @@ void displayComputers(std::vector<Computers> computers){
 
     for (unsigned int i = 0; i < computers.size(); i++)
     {
-        string computersType = (computers.at(i).getType() == getType::mecanic) ? "Mecanic" : "Electronic";
+        string computersType = (computers.at(i).getType() == comType::mecanic) ? "Mecanic" : "Electronic";
 
-        int yearDied = scientists.at(i).getYearDied();
-        string died = (yearDied == constants::YEAR_DIED_DEFAULT_VALUE) ? "Alive" : utils::intToString(yearDied);
-
-        cout << setw(20) << std::left << scientists.at(i).getName()
-             << setw(8) << std::left << scientistSex
-             << setw(12) << std::left << scientists.at(i).getYearBorn()
-             << setw(12) << std::left << died << endl;
+        cout << setw(20) << std::left << computers.at(i).getName()
+             << setw(8) << std::left << computersType
+             << setw(12) << std::left << computers.at(i).getYearBuild();
+             //<< setw(12) << std::left << built << endl;
     }
 }
-*/
 bool ConsoleUI::addScientist(string data)
 {
     vector<string> fields = utils::splitString(data, ',');
@@ -408,6 +416,46 @@ bool ConsoleUI::setSort(string sortCommand)
     else if (sortCommand == constants::SORT_SCIENTIST_YEAR_DIED_DESCENDING)
     {
         sortBy = "yearDied";
+        sortAscending = false;
+    }
+    else
+    {
+        return false;
+    }
+
+    return true;
+}
+
+bool ConsoleUI::setSort2(string sort2Command)
+{
+    if (sort2Command == constants::SORT_SCIENTIST_NAME_ASCENDING)
+    {
+        sortBy = "name";
+        sortAscending = true;
+    }
+    else if (sort2Command == constants::SORT_SCIENTIST_NAME_DESCENDING)
+    {
+        sortBy = "name";
+        sortAscending = false;
+    }
+    else if (sort2Command == constants::SORT_SCIENTIST_YEAR_BORN_ASCENDING)
+    {
+        sortBy = "yearBuild";
+        sortAscending = true;
+    }
+    else if (sort2Command == constants::SORT_SCIENTIST_YEAR_BORN_DESCENDING)
+    {
+        sortBy = "yearBuild";
+        sortAscending = false;
+    }
+    else if (sort2Command == constants::SORT_SCIENTIST_YEAR_DIED_ASCENDING)
+    {
+        sortBy = "Did it get built";
+        sortAscending = true;
+    }
+    else if (sort2Command == constants::SORT_SCIENTIST_YEAR_DIED_DESCENDING)
+    {
+        sortBy = "Did it get built";
         sortAscending = false;
     }
     else

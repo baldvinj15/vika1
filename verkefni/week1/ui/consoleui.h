@@ -14,6 +14,7 @@ enum command {
     display,
     search,
     sort,
+    sort2,
     back,
     quit,
     unknown,
@@ -87,6 +88,7 @@ private:
      * @return true if it was a success, false if it was a failure
      */
     bool setSort(std::string sortCommand);
+    bool setSort2(std::string sort2Command);
 
     void displayError(std::string error);
 
