@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\scientist.o
+./debug\scientistrepository.o
+./debug\scientistservice.o
+./debug\consoleui.o
+./debug\utils.o
+./debug\scientistcomparator.o
+./debug\computers.o
+./debug\computersrepository.o
+./debug\computersservice.o
+./debug\computerscomparator.o
+);

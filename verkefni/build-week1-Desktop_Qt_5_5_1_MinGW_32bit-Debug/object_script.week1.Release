@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\scientist.o
+./release\scientistrepository.o
+./release\scientistservice.o
+./release\consoleui.o
+./release\utils.o
+./release\scientistcomparator.o
+./release\computers.o
+./release\computersrepository.o
+./release\computersservice.o
+./release\computerscomparator.o
+);
